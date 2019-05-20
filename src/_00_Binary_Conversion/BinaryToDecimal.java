@@ -25,5 +25,6 @@ public class BinaryToDecimal {
 				    010110 in binary is equal to 22 in decimal!
 		 
 		 */
+		
 	}
 }
