@@ -19,7 +19,7 @@ public class BitShifter {
 		
 		num = 3; // 0011
 		numShifted = num << 1;
-		System.out.println(numShifted);
+		System.out.println("aowie " + numShifted);
 		numShifted = num >> 1;
 		System.out.println(numShifted);
 		numShifted = numShifted >> 1;

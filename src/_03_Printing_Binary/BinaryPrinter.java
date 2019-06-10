@@ -8,9 +8,9 @@ public class BinaryPrinter {
 
 	public static void main(String[] args) {
 		BinaryPrinter bp = new BinaryPrinter();
-		bp.printShortBinary((short) 222); 
+		bp.printLongBinary(38662395639663l);
 		System.out.println();
-		bp.printShortBinary((short) 32700);
+		bp.printLongBinary(3857395739573957398l);
 	}
 
 	public void printByteBinary(byte b) {
@@ -32,11 +32,19 @@ public class BinaryPrinter {
 	}
 
 	public void printIntBinary(int i) {
-
+		short first = (short) ((i & 0b11111111111111110000000000000000) >> 16);
+		short second = (short) (i & 0b00000000000000001111111111111111);
+		printShortBinary(first);
+		printShortBinary(second);
 	}
 
 	public void printLongBinary(long l) {
-
-	} 	// 11011110
-		//111111110111100
+		int first = (int) (l >> 32);
+		int second = (int) (l & 0b11111111111111111111111111111111);
+		printIntBinary(first);
+		printIntBinary(second);
+	}	// 38662395639663 = 1000110010100111001010010110111011011101101111
+		//					1000110010100111001010010110111011011101101111
+		// 3857395739573957398 = 11010110001000001110001111110011011111011010010011001100010110
+		//						 11010110001000001110001111110011011111011010010011001100010110
 }
